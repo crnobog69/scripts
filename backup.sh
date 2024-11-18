@@ -1,20 +1,22 @@
 #!/bin/bash
-# System update script
+# Backup script for important files
 
-echo "Updating system..."
-sudo pacman -Syu
+backup_dir="$HOME/backups/$(date +%Y-%m-%d)"
+mkdir -p "$backup_dir"
 
-echo "Cleaning package cache..."
-sudo pacman -Sc
+# Add your backup commands here
+cp -r "$HOME/.config" "$backup_dir"
+cp -r "$HOME/Documents" "$backup_dir"
 
-echo "Update complete!"`,
+echo "Backup completed: $backup_dir"`,
         raw: `#!/bin/bash
-# System update script
+# Backup script for important files
 
-echo "Updating system..."
-sudo pacman -Syu
+backup_dir="$HOME/backups/$(date +%Y-%m-%d)"
+mkdir -p "$backup_dir"
 
-echo "Cleaning package cache..."
-sudo pacman -Sc
+# Add your backup commands here
+cp -r "$HOME/.config" "$backup_dir"
+cp -r "$HOME/Documents" "$backup_dir"
 
-echo "Update complete!"
+echo "Backup completed: $backup_dir"
